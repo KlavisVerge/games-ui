@@ -1,0 +1,36 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src\\games-ui-app\\games-ui-app.js",
+  "fragments": [],
+  "sources": [
+    "src/**/*",
+    "package.json",
+    "index.html",
+    "src/games-ui-app/games-ui-app.js"
+  ],
+  "extraDependencies": [
+    "bower_components/webcomponentsjs/*.js",
+    "manifest.json",
+    "node_modules/@webcomponents/webcomponentsjs/**/*",
+    "node_modules/web-animations-js/**/*"
+  ],
+  "builds": [
+    {
+      "name": "es6-unbundled",
+      "js": {
+        "minify": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "addServiceWorker": true,
+      "addPushManifest": true
+    }
+  ],
+  "npm": true,
+  "componentDir": "node_modules/",
+  "moduleResolution": "node"
+}

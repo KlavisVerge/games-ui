@@ -1,0 +1,6 @@
+{
+  "name": "games-ui",
+  "short_name": "games-ui",
+  "start_url": "/",
+  "display": "standalone"
+}
