@@ -70,6 +70,10 @@ class GamesUiApp extends PolymerElement {
           width: 28px;
           margin: 0px 0px 0px -28px
         }
+
+        api-nav {
+          padding: 15px;
+        }
       </style>
       <div class="nav">
         <api-nav></api-nav>
