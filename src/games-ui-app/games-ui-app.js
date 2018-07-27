@@ -20,7 +20,6 @@ class GamesUiApp extends PolymerElement {
           align-items: center;
           text-align: center;
           height: 100%;
-          background-color: #edeef0;
           padding: 15px 0px 15px 0px;
         }
 
@@ -28,12 +27,7 @@ class GamesUiApp extends PolymerElement {
           display: flex;
           flex-direction: column;
           align-items: center;
-          background-color: #edeef0;
           padding: 15px 0px 15px 0px;
-        }
-
-        .nav {
-          background-color: #edeef0;
         }
 
         .spinner {
@@ -41,7 +35,16 @@ class GamesUiApp extends PolymerElement {
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          background-color: #edeef0;
+        }
+
+        .overlay {
+          background: #edeef0;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          top: 0;
+          left: 0;
+          z-index: -1;
         }
 
         a {
@@ -75,6 +78,7 @@ class GamesUiApp extends PolymerElement {
           padding: 15px;
         }
       </style>
+      <div class="overlay"></div>
       <div class="nav">
         <api-nav></api-nav>
       </div>
