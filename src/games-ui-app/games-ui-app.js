@@ -12,6 +12,10 @@ class GamesUiApp extends PolymerElement {
   static get template() {
     return html`
       <style>
+        body {
+          font-family: sans-serif;
+        }
+
         .horizontal {
           display: flex;
           flex-direction: row;
