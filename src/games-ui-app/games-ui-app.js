@@ -25,7 +25,6 @@ class GamesUiApp extends PolymerElement {
           text-align: center;
           height: 100%;
           padding: 15px 0px 15px 0px;
-          background-color: #edeef0;
         }
 
         .vertical {
@@ -33,11 +32,6 @@ class GamesUiApp extends PolymerElement {
           flex-direction: column;
           align-items: center;
           padding: 15px 0px 15px 0px;
-          background-color: #edeef0;
-        }
-
-        .nav {
-          background-color: #edeef0;
         }
 
         .spinner {
@@ -45,7 +39,6 @@ class GamesUiApp extends PolymerElement {
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          background-color: #edeef0;
         }
 
         a {
@@ -55,6 +48,7 @@ class GamesUiApp extends PolymerElement {
 
         p {
           font-size: 1.125rem;
+          padding: 0px 5px 0px 5px;
         }
 
         paper-card {
@@ -79,9 +73,7 @@ class GamesUiApp extends PolymerElement {
           padding: 15px;
         }
       </style>
-      <div class="nav">
-        <api-nav></api-nav>
-      </div>
+      <api-nav></api-nav>
       <div class="vertical">
         <h1>Select a game to begin!</h1>
         <p>Welcome to the games landing page on <a href="https://statsplash.com">StatSplash</a>. Below are the various games currently implemented on the site. 
