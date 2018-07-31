@@ -116,40 +116,45 @@ class GamesUiApp extends PolymerElement {
 
   ready() {
     super.ready();
-    var url = 'https://3oemw4weak.execute-api.us-east-1.amazonaws.com/api/twitch-games';
-      var data = {games: this.games};
-      let err = false;
+    let requestParams = '';
+    for(var i = 0; i < this.games.length; i++){
+      requestParams += this.games[i] + '%7C';
+    }
+    if(this.games.length > 0){
+      requestParams = requestParams.substring(0, requestParams.length - 3);
+    }
+    var url = 'https://xupmhdl2g5.execute-api.us-east-1.amazonaws.com/api/twitch-games?games=' + requestParams;
+    let err = false;
 
-      fetch(url, {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers:{
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
+    fetch(url, {
+      method: 'GET',
+      headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+    .catch(error => {
+      this.active = false;
+      this.$.spinner.classList.remove('active');
+      console.error('Error:', error);
+      err = true;
+    })
+    .then(response => {
+      if(err){
+        return;
+      }
+      for(var i = 0; i < response.game.data.length; i++){
+        response.game.data[i].box_art_url = response.game.data[i].box_art_url.replace('{width}', '170').replace('{height}', '226');
+        if(this.games[0] === response.game.data[i].name){
+          response.game.data[i].href = "https://statsplash.com/games/fortnite/"
+        } else{
+          response.game.data[i].href = "https://statsplash.com/games/league-of-legends/"
         }
-      }).then(res => res.json())
-      .catch(error => {
-        this.active = false;
-        this.$.spinner.classList.remove('active');
-        console.error('Error:', error);
-        err = true;
-      })
-      .then(response => {
-        if(err){
-          return;
-        }
-        for(var i = 0; i < response.game.data.length; i++){
-          response.game.data[i].box_art_url = response.game.data[i].box_art_url.replace('{width}', '170').replace('{height}', '226');
-          if(this.games[0] === response.game.data[i].name){
-            response.game.data[i].href = "https://statsplash.com/games/fortnite/"
-          } else{
-            response.game.data[i].href = "https://statsplash.com/games/league-of-legends/"
-          }
-        }
-        this.gameresponse = response.game.data;
-        this.active = false;
-        this.$.spinner.classList.remove('active');
-      });
+      }
+      this.gameresponse = response.game.data;
+      this.active = false;
+      this.$.spinner.classList.remove('active');
+    });
   }
 }
 
