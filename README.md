@@ -35,4 +35,4 @@ Your application is already set up to be tested via [web-component-tester](https
 ## Deploy
 
 polymer build
-aws s3 sync ./build/es6-unbundled s3://statsplash/games/ --acl public-read --exclude "*fortnite/*"
+aws s3 sync ./build/es6-unbundled s3://statsplash/games/ --acl public-read --exclude "*fortnite/*" --exclude "*leagueoflegends/*"
