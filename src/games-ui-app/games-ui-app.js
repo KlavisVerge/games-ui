@@ -78,7 +78,7 @@ class GamesUiApp extends PolymerElement {
         <h1>Select a game to begin!</h1>
         <p>Welcome to the games landing page on <a href="https://www.statsplash.com">StatSplash</a>. Below are the various games currently implemented on the site. 
         They provide statistics, Twitch streams and hot Reddit posts with more to come! The site currently supports <a href="https://www.statsplash.com/games/fortnite">Fortnite</a>
-         and <a href="https://www.statsplash.com/games/league-of-legends">League of Legends</a> with other games under construction.</p>
+         and <a href="https://www.statsplash.com/games/leagueoflegends">League of Legends</a> with other games under construction.</p>
         <p>Have games you would like to see? Head over to our <a href="https://www.statsplash.com/about">about</a> page to make a suggestion.</p>
         <p>Have functionality you would like to see? You may also submit that to our team on the <a href="https://www.statsplash.com/about">about</a> page.</p>
       </div>
@@ -148,7 +148,7 @@ class GamesUiApp extends PolymerElement {
         if(this.games[0] === response.game.data[i].name){
           response.game.data[i].href = "https://www.statsplash.com/games/fortnite/"
         } else{
-          response.game.data[i].href = "https://www.statsplash.com/games/league-of-legends/"
+          response.game.data[i].href = "https://www.statsplash.com/games/leagueoflegends/"
         }
       }
       this.gameresponse = response.game.data;
